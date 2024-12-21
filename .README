@@ -1,0 +1,36 @@
+KUBERNETES SIMPLE GUIDE
+Kubernetes Course - Full Beginners Tutorial (Containerize Your Apps!)
+https://www.youtube.com/watch?v=d6WC5n9G_sM
+https://github.com/bstashchuk/k8s
+
+Credentials and Configs in Kubernetes Secrets and ConfigMaps
+https://www.youtube.com/watch?v=tWc3wfC8sOc
+![alt text](image-1.png)
+![alt text](image-2.png)
+
+DOCKER FILES
+Dockerize .NET 6 in 10 Minutes
+https://www.youtube.com/watch?v=3s-RfwvijpY
+![alt text](image.png)
+
+https://fireship.io/lessons/docker-basics-tutorial-nodejs/
+
+https://www.youtube.com/watch?v=SnSH8Ht3MIc
+https://github.com/techno-tim/techno-tim.github.io/blob/master/Dockerfile
+
+KUSTIMATATION
+https://github.com/devopsjourney1/mykustomapp/tree/master/solution/base
+
+MONGODB ON KUNERNETES
+How to run MongoDB with StatefulSet in Kubernetes?
+https://www.youtube.com/watch?v=MQZ-WXZbU4w
+https://github.com/peterj/k8s-shorts-files/blob/main/files/mongodb-svc.yaml
+
+AZURE & KUBERNETES
+Introduction to Azure Kubernetes Service for beginners
+https://www.youtube.com/watch?v=eyvLwK5C2dw
+https://github.com/marcel-dempers/docker-development-youtube-series/blob/master/kubernetes/cloud/azure/getting-started.md
+
+AZURE & CI-CD
+Azure DevOps Tutorial for Beginners | CI/CD with Azure Pipelines
+https://www.youtube.com/watch?v=4BibQ69MD8c&t=1538s
