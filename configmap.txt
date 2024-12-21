@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myapp
+  template:
+    metadata:
+      labels:
+        app: myapp
+    spec:
+      containers:
+      - name: myapp-container
+        image: myapp-image  # Replace with your container image
+        volumeMounts:
+        - name: appsettings-volume
+          mountPath: /app/appsettings.json  # Path inside the container where the config will be mounted
+          subPath: appsettings.json  # Ensures the file is mounted as appsettings.json inside the container
+      volumes:
+      - name: appsettings-volume
+        configMap:
+          name: appsettings  # This should match the name of the ConfigMap created earlier
+
+# configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+data:
+  appsettings.json: |
+    {
+      "ConnectionStrings": {
+        "DefaultConnection": "Server=localhost;Database=mydb;User=myuser;Password=mypass;"
+      },
+      "AppSettings": {
+        "Environment": "Production"
+      }
+    }

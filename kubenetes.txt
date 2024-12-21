@@ -1,0 +1,64 @@
+# Common kubectl commands for managing Kubernetes resources
+
+# 1. Apply Changes (create or update resources)
+kubectl apply -f deployment.yaml
+kubectl apply -f ./k8s/            # Apply changes to all resources in a directory
+kubectl apply -f deployment.yaml -f service.yaml  # Apply multiple files
+
+# 2. Create Resources
+kubectl create -f deployment.yaml   # Create a resource from a file
+kubectl create deployment my-app --image=my-image   # Create a deployment directly from the command line
+
+# 3. Get Resources (Display resource information)
+kubectl get all                  # Get all resources in the current namespace
+kubectl get pod my-pod            # Get a specific pod
+kubectl get pods -n my-namespace  # Get resources in a specific namespace
+kubectl get deployments           # Get a list of deployments
+
+# 4. Describe Resources (Show detailed information)
+kubectl describe pod my-pod
+kubectl describe deployment my-deployment
+
+# 5. Delete Resources
+kubectl delete pod my-pod         # Delete a specific pod
+kubectl delete deployment my-deployment   # Delete a deployment
+kubectl delete all --all          # Delete all resources in a namespace
+
+# 6. Logs (Retrieve logs from containers)
+kubectl logs my-pod               # Get logs from a specific pod
+kubectl logs my-pod -c my-container  # Get logs from a container in a pod
+
+# 7. Exec (Run commands inside a container)
+kubectl exec -it my-pod -- /bin/bash  # Execute a shell inside a pod's container
+kubectl exec my-pod -- ls /app      # Execute a command inside a pod’s container
+
+# 8. Scale Resources (Adjust the number of replicas)
+kubectl scale deployment my-deployment --replicas=3
+
+# 9. Expose Resources (Create a service from a resource)
+kubectl expose deployment my-deployment --type=LoadBalancer --name=my-service
+
+# 10. Port-Forward (Forward local port to pod or service)
+kubectl port-forward pod/my-pod 8080:80       # Forward a local port to a pod
+kubectl port-forward service/my-service 8080:80  # Forward a local port to a service
+
+# 11. Apply Kustomization (Use Kustomize for resource customization)
+kubectl apply -k ./kustomization-directory/
+
+# 12. Manage Kubeconfig (Switch between clusters and contexts)
+kubectl config current-context          # View current context
+kubectl config use-context my-cluster-context  # Set the context to switch clusters
+
+# 13. Top (Show resource usage for nodes and pods)
+kubectl top nodes                       # Show resource usage of nodes
+kubectl top pods                        # Show resource usage of pods
+
+# Useful Flags for kubectl:
+# -n <namespace>    # Specify the namespace
+kubectl get pods -n my-namespace
+
+# -o yaml/json      # Output in YAML or JSON format
+kubectl get pod my-pod -o yaml
+
+# --dry-run         # Simulate the action without making changes
+kubectl apply -f deployment.yaml --dry-run
